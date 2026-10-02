@@ -1,0 +1,741 @@
+<mxfile host="app.diagrams.net" pages="5">
+  <diagram id="page-1" name="۱ · جریان اصلی برنامه">
+    <mxGraphModel dx="1373" dy="757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;شروع&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="45" width="330" x="385" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="cli" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#EAE9FA;strokeColor=#7367A9;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خواندن آرگومان‌ها با argparse&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;--input / --out / --min-length&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="330" x="385" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="setup" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ساخت پوشهٔ خروجی&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;فعال‌کردن Log در حالت Append&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="330" x="385" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="data" parent="1" style="shape=process;whiteSpace=wrap;html=1;fillColor=#E2ECFD;strokeColor=#4F6FAD;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خواندن و بررسی دو فایل داده&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;زیرنمودار ۳&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="330" x="385" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="parse" parent="1" style="shape=process;whiteSpace=wrap;html=1;fillColor=#E2ECFD;strokeColor=#4F6FAD;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خواندن و تفکیک رکوردهای FASTA&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;زیرنمودار ۲&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="330" x="385" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="more" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;رکورد دیگری باقی مانده؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="300" x="400" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="valid" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;توالی غیرخالی و فقط&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;شامل A / T / C / G است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="300" x="400" y="715" as="geometry" />
+        </mxCell>
+        <mxCell id="bad" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FCE9E8;strokeColor=#BC6260;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;InvalidSequenceError&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;ثبت خطا؛ رد همین رکورد&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="245" x="790" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="orf" parent="1" style="shape=process;whiteSpace=wrap;html=1;fillColor=#E2ECFD;strokeColor=#4F6FAD;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ساخت دو جهت و یافتن ORFها&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;زیرنمودار ۴&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="330" x="385" y="855" as="geometry" />
+        </mxCell>
+        <mxCell id="filter" parent="1" style="shape=process;whiteSpace=wrap;html=1;fillColor=#E2ECFD;strokeColor=#4F6FAD;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ترجمه، تحلیل و فیلتر هر ORF&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;زیرنمودار ۵&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="330" x="385" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="collect" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;افزودن نتایج پذیرفته‌شده&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;به فهرست نهایی&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="330" x="385" y="1075" as="geometry" />
+        </mxCell>
+        <mxCell id="report" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#EAE9FA;strokeColor=#7367A9;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;شماره‌گذاری نتایج نهایی&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;BFG_001, BFG_002, ...&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;نوشتن report.txt&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="255" x="55" y="745" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ثبت خلاصهٔ اجرا و بستن فایل‌ها&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;پایان&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="255" x="55" y="945" as="geometry" />
+        </mxCell>
+        <mxCell id="fatal" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FCE9E8;strokeColor=#BC6260;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خطای سراسری&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;پیام روشن + ثبت در Log&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;اگر Log در دسترس نبود: stderr&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;توقف اجرا با کد غیرصفر&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="155" width="245" x="790" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="start" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="cli" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="cli" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="setup" value="معتبر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="setup" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="data" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="data" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="parse" value="سالم">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="parse" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="more" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="cli" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" target="fatal" value="نامعتبر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="212" />
+              <mxPoint x="1060" y="300" />
+              <mxPoint x="912" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="setup" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="fatal" value="خطا">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="312" />
+              <mxPoint x="760" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="data" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="fatal" value="خطا">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="parse" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="fatal" value="خطا">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="755" y="512" />
+              <mxPoint x="755" y="455" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="more" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="valid" value="بله: رکورد بعدی">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="more" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="report" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="182" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="valid" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="bad" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="bad" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="more" value="بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="765" />
+              <mxPoint x="1060" y="690" />
+              <mxPoint x="745" y="690" />
+              <mxPoint x="745" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="valid" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="orf" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="orf" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="filter" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" edge="1" parent="1" source="filter" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="collect" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge16" edge="1" parent="1" source="collect" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="more" value="رکورد بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="1170" />
+              <mxPoint x="755" y="1170" />
+              <mxPoint x="755" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge17" edge="1" parent="1" source="report" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="end" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note3" parent="1" style="text;html=1;align=right;fontSize=15;fontFamily=DejaVu Sans;fontColor=#485A6E;whiteSpace=wrap;" value="&lt;div dir=&quot;rtl&quot;&gt;راهنما: لوزی = شرط | مستطیل = عملیات | کادر دوتایی = زیرنمودار | قرمز = مسیر خطا&lt;/div&gt;" vertex="1">
+          <mxGeometry height="55" width="1030" x="35" y="1408" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page-2" name="۲ · خواندن FASTA و بستن هر رکورد">
+    <mxGraphModel dx="2312" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#EAE9FA;strokeColor=#7367A9;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;بازکردن فایل ورودی با UTF-8&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;current = None; records = []&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="340" x="135" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="line" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خط دیگری وجود دارد؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="300" x="155" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="blank" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خط خالی است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="300" x="155" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="header" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خط، Header است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="300" x="155" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="flush" parent="1" style="shape=process;whiteSpace=wrap;html=1;fillColor=#E2ECFD;strokeColor=#4F6FAD;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;بستن رکورد قبلی&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;اگر وجود دارد&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;طبق مسیر سمت راست&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="210" x="95" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="new" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ساخت رکورد جاری جدید&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;ذخیرهٔ Header و شمارهٔ خط&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="210" x="95" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="has" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;Header جاری داریم؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="220" x="345" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="append" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;افزودن خط توالی&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;به قطعه‌های رکورد جاری&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="220" x="345" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="err" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FCE9E8;strokeColor=#BC6260;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;FastaFormatError&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;توالی قبل از Header&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;ثبت و عبور تا Header بعدی&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="220" x="345" y="935" as="geometry" />
+        </mxCell>
+        <mxCell id="eof" parent="1" style="shape=process;whiteSpace=wrap;html=1;fillColor=#E2ECFD;strokeColor=#4F6FAD;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;بستن آخرین رکورد&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;با همان مسیر سمت راست&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="240" x="75" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="nonempty" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;رکورد سالم داریم؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="220" x="85" y="1215" as="geometry" />
+        </mxCell>
+        <mxCell id="return" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;برگرداندن فهرست رکوردها&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="220" x="345" y="1230" as="geometry" />
+        </mxCell>
+        <mxCell id="stop" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FCE9E8;strokeColor=#BC6260;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;فایل خالی / بدون رکورد سالم&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;FastaFormatError&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;بازگشت خطا به جریان اصلی&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="240" x="75" y="1345" as="geometry" />
+        </mxCell>
+        <mxCell id="fstart" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;زیرروال بستن یک رکورد&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;بدون current: بازگشت فوری&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="280" x="735" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="id" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;Header دارای ID است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="95" width="280" x="735" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="seq" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;رکورد توالی دارد؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="95" width="280" x="735" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="ferr" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FCE9E8;strokeColor=#BC6260;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;FastaFormatError&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;ثبت شمارهٔ خط؛ رد رکورد&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;بازگشت به فراخواننده&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="280" x="735" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="normal" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;اتصال خطوط و تبدیل به حروف بزرگ&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;استخراج organism در صورت وجود&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;کاراکتر نامعتبر حذف نمی‌شود&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="280" x="735" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="dup" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ID قبلاً دیده شده؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="280" x="735" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="warning" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ثبت Warning برای ID تکراری&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;رکورد حفظ می‌شود&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="280" x="735" y="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="save" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ذخیرهٔ رکورد و شمارهٔ ترتیبی آن&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;افزودن ID به seen_ids&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;بازگشت به فراخواننده&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="280" x="735" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="s" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="line" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="line" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="blank" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="blank" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="header" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="blank" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="line" value="بله">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="397" />
+              <mxPoint x="100" y="190" />
+              <mxPoint x="305" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="header" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="flush" value="بله">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="header" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" target="has" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="555" y="527" />
+              <mxPoint x="555" y="600" />
+              <mxPoint x="455" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="flush" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="new" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="new" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="line" value="خط بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="55" y="792" />
+              <mxPoint x="55" y="190" />
+              <mxPoint x="305" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="has" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="append" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="has" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="err" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="670" />
+              <mxPoint x="590" y="985" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="append" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="line" value="خط بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="818" />
+              <mxPoint x="605" y="267" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="err" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="line" value="خط بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="985" />
+              <mxPoint x="625" y="267" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="line" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="eof" value="خیر: EOF">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="10" y="267" />
+              <mxPoint x="10" y="1070" />
+              <mxPoint x="195" y="1070" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="eof" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="nonempty" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="nonempty" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="return" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" edge="1" parent="1" source="nonempty" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="stop" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge16" edge="1" parent="1" source="fstart" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="id" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge17" edge="1" parent="1" source="id" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="seq" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge18" edge="1" parent="1" source="id" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="ferr" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="327" />
+              <mxPoint x="1060" y="607" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge19" edge="1" parent="1" source="seq" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="ferr" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge20" edge="1" parent="1" source="seq" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="normal" value="بله">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="460" />
+              <mxPoint x="690" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge21" edge="1" parent="1" source="normal" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="dup" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge22" edge="1" parent="1" source="dup" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="warning" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge23" edge="1" parent="1" source="warning" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="save" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge24" edge="1" parent="1" source="dup" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="save" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="915" />
+              <mxPoint x="1060" y="1192" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page-3" name="۳ · بارگذاری فایل‌های مرجع">
+    <mxGraphModel dx="1212" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#EAE9FA;strokeColor=#7367A9;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;data/codon_table.txt&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;data/amino_weights.txt&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="390" x="355" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="file" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;فایل دیگری باقی مانده؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="330" x="385" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="open" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;بازکردن فایل با UTF-8&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;ثبت شمارهٔ خط هنگام خواندن&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="390" x="355" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="line" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خط دیگری وجود دارد؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="330" x="385" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="ignore" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خط خالی یا Comment است؟&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;شروع با #&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="330" x="385" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="format" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ساختار و مقادیر خط&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;معتبر است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="330" x="385" y="765" as="geometry" />
+        </mxCell>
+        <mxCell id="store" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;افزودن مقدار به Dictionary&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;بررسی کلید تکراری&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="390" x="355" y="935" as="geometry" />
+        </mxCell>
+        <mxCell id="complete" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;جدول کامل و سازگار است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="245" x="60" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="bad" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#FCE9E8;strokeColor=#BC6260;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;DataFileError&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;نام فایل + علت&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;برای خط خراب: شمارهٔ خط&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;توقف از طریق جریان اصلی&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="245" x="805" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="ret" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;برگرداندن جدول ترجمه&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;و جدول وزن‌ها&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="235" x="70" y="1175" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="s" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="file" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="file" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="open" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="file" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="ret" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="35" y="270" />
+              <mxPoint x="35" y="1225" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="open" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="line" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="open" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="bad" value="فایل مفقود / ناخوانا">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="395" />
+              <mxPoint x="1070" y="865" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="line" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="ignore" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="ignore" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="line" value="بله">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="775" y="660" />
+              <mxPoint x="775" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="ignore" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="format" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="format" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="store" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="format" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="bad" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="store" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="line" value="خط بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="972" />
+              <mxPoint x="770" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="store" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="bad" value="تکرار ناسازگار">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="972" />
+              <mxPoint x="780" y="865" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="line" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" target="complete" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="182" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="complete" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=1;entryY=0.5;" target="file" value="بله: فایل بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="182" y="330" />
+              <mxPoint x="780" y="330" />
+              <mxPoint x="780" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="complete" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="bad" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="182" y="1090" />
+              <mxPoint x="925" y="1090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page-4" name="۴ · یافتن ORF در هر ۶ حالت خواندن">
+    <mxGraphModel dx="1212" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;دریافت DNA معتبر با طول L&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;Forward = DNA؛ Reverse = Reverse Complement&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;در هر دو جهت T را به U تبدیل کن&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="410" x="340" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="frame" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;حالت دیگری باقی مانده؟&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;دو جهت × Frameهای 0, 1, 2&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="310" x="390" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="init" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;انتخاب جهت و Frame بعدی&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;s = frame&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="330" x="380" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="room" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;s + 3 &amp;lt;= L ?&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="310" x="390" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="aug" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;RNA[s:s+3] == AUG ?&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="310" x="390" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="j" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;j = s + 3&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="330" x="380" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="jroom" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;j + 3 &amp;lt;= L ?&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="310" x="390" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="stop" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;RNA[j:j+3] یکی از&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;UAA / UAG / UGA است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="105" width="310" x="390" y="985" as="geometry" />
+        </mxCell>
+        <mxCell id="inc" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;j = j + 3&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="235" x="805" y="995" as="geometry" />
+        </mxCell>
+        <mxCell id="incomplete" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ORF ناقص&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;is_complete = False&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;end = j&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="250" x="65" y="845" as="geometry" />
+        </mxCell>
+        <mxCell id="complete" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ORF کامل&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;is_complete = True&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;end = j + 3&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="310" x="390" y="1140" as="geometry" />
+        </mxCell>
+        <mxCell id="save" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ذخیرهٔ بازهٔ RNA[s:end]&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;جهت، Frame و کامل‌بودن&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;Forward: start_pos = s&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;Reverse: start_pos = L-1-s&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="250" x="65" y="1150" as="geometry" />
+        </mxCell>
+        <mxCell id="nexts" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;s = s + 3&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;جست‌وجوی AUG بعدی&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="235" x="805" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="ret" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;برگرداندن همهٔ ORFها&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;حتی فهرست خالی&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="250" x="65" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="s" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="frame" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="frame" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="init" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="frame" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="ret" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="init" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="room" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="room" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="frame" value="خیر: حالت بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="770" y="515" />
+              <mxPoint x="770" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="room" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="aug" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="aug" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="nexts" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="aug" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="j" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="j" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="jroom" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="jroom" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="stop" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="jroom" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="incomplete" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="stop" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="complete" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="stop" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="inc" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="inc" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="jroom" value="ادامه">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="1030" />
+              <mxPoint x="1060" y="895" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="complete" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="save" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" edge="1" parent="1" source="incomplete" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="save" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge16" edge="1" parent="1" source="save" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="nexts" value="شروع بعدی؛ حتی داخل ORF قبلی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="182" y="1305" />
+              <mxPoint x="1080" y="1305" />
+              <mxPoint x="1080" y="657" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge17" edge="1" parent="1" source="nexts" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=1;entryY=0.5;" target="room" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="922" y="580" />
+              <mxPoint x="750" y="580" />
+              <mxPoint x="750" y="515" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="page-5" name="۵ · ترجمه، تحلیل پروتئین و فیلتر">
+    <mxGraphModel dx="1212" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1550" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;دریافت ORFها و تنظیمات فیلتر&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;accepted = []&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="380" x="355" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="more" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ORF دیگری باقی مانده؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="310" x="390" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="init" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;انتخاب ORF بعدی&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;protein = &amp;quot;&amp;quot;; k = 0&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="65" width="360" x="365" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="codon" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;کدون کامل دیگری داریم؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="310" x="390" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="lookup" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;خواندن کدون و ترجمه با جدول&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;aa = codon_table[codon]&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="360" x="365" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="stop" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;ltr&quot;&gt;aa == * ?&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="310" x="390" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="add" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;افزودن aa به protein&lt;/div&gt;&lt;div dir=&quot;ltr&quot;&gt;k = k + 3&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="230" x="805" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="analyze" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;ساخت ProteinSequence و ORF&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;محاسبهٔ طول و وزن&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;یافتن Motifها و ذخیرهٔ نام/الگو و موقعیت&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="390" x="350" y="855" as="geometry" />
+        </mxCell>
+        <mxCell id="length" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;طول حداقل مجاز را دارد؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="310" x="390" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="weight" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;شرط وزن برقرار است؟&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;یا فیلتر غیرفعال است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="105" width="260" x="70" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="motif" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3D9;strokeColor=#B38324;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 14px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;Motif پیدا شده است؟&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;یا فیلتر غیرفعال است؟&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="105" width="260" x="425" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="keep" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;افزودن ORF به accepted&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;حفظ کامل یا ناقص بودن&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="85" width="230" x="805" y="1170" as="geometry" />
+        </mxCell>
+        <mxCell id="reject" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#EDF4FF;strokeColor=#5479A8;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;رد ORF توسط فیلتر&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;این مورد خطا نیست&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="230" x="805" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="ret" parent="1" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fillColor=#DDF3EE;strokeColor=#278572;fontFamily=DejaVu Sans;fontSize=16;" value="&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; style=&quot;font: 16px DejaVu Sans,sans-serif;line-height:1.6;text-align:center;color:#20314a;&quot;&gt;&lt;div dir=&quot;rtl&quot;&gt;برگرداندن accepted&lt;/div&gt;&lt;div dir=&quot;rtl&quot;&gt;به جریان اصلی&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="230" x="70" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" edge="1" parent="1" source="s" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="more" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="more" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="ret" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="more" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="init" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="init" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="codon" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="codon" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="lookup" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="lookup" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="stop" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="stop" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="add" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="add" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" target="codon" value="ادامه">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="740" />
+              <mxPoint x="1060" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="stop" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="analyze" value="بله: توقف را اضافه نکن">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="codon" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="analyze" value="خیر: پایان ORF ناقص">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="500" />
+              <mxPoint x="320" y="912" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="analyze" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="length" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="length" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="reject" value="خیر">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="length" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="weight" value="بله">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="1127" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge13" edge="1" parent="1" source="weight" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="motif" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" edge="1" parent="1" source="motif" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="keep" value="بله">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge15" edge="1" parent="1" source="weight" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="reject" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="1310" />
+              <mxPoint x="1070" y="1310" />
+              <mxPoint x="1070" y="1057" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge16" edge="1" parent="1" source="motif" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="reject" value="خیر">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="555" y="1335" />
+              <mxPoint x="1090" y="1335" />
+              <mxPoint x="1090" y="1057" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge17" edge="1" parent="1" source="keep" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="more" value="ORF بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="922" y="1285" />
+              <mxPoint x="30" y="1285" />
+              <mxPoint x="30" y="185" />
+              <mxPoint x="760" y="185" />
+              <mxPoint x="760" y="265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge18" edge="1" parent="1" source="reject" style="endArrow=block;html=1;rounded=0;strokeColor=#64748B;fontSize=13;fontFamily=DejaVu Sans;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="more" value="ORF بعدی">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="1057" />
+              <mxPoint x="780" y="265" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
