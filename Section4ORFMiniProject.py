@@ -2,7 +2,7 @@ START_CODON = "AUG"
 STOP_CODONS = {"UAA", "UAG", "UGA"}
 
 
-def dna_replace(dna):
+def complement_dna(dna):
 
     tempDNA = str(dna)
     tempDNA = tempDNA.replace("A", "X")
@@ -21,7 +21,7 @@ def reverse_dna(dna):
     return reversed_dna
 
 def reverse_complement(dna):
-    complementDNA = dna_replace(dna)
+    complementDNA = complement_dna(dna)
     reversedAndComplementedDNA = reverse_dna(complementDNA)
     return reversedAndComplementedDNA
 
@@ -74,7 +74,6 @@ def search_frame(rna, frame, strand, original_dna_length):
                 start_position = original_dna_length - 1 - start
           
             orf = {
-                "dna": dna,
                 "strand": strand, #reverse or forward 
                 "frame": frame, #which frame? 0 1 or 2
                 "start_pos": start_position, 
@@ -109,11 +108,12 @@ def find_orfs(dna):
         )
         all_orfs.extend(frame_orfs)
 
-    reversedRNA = reverse_complement(dna)
+    reversed_dna = reverse_complement(dna)
+    reversed_rna = dna_to_rna(reversed_dna)
 
     for frame in range(3):
         frame_orfs = search_frame(
-            reversedRNA,
+            reversed_rna,
             frame,
             "Reverse",
             original_length
@@ -123,7 +123,7 @@ def find_orfs(dna):
     return all_orfs
 
 
-dna = "ATGCTTTCATAGUAAUGA"
+dna = "ATGCTTTCATAG"
 reversed_dna = reverse_dna(dna)
 rna = dna_to_rna(dna)
 orfs = find_orfs(dna)
